@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background: radial-gradient(circle, #FFFFFF 0%, #FFFFFF 100%);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 987px; /* Ширина контейнера */
+    height: 549px; /* Высота контейнера */
+    background: radial-gradient(circle, #FFFFFF 0%, #FFFFFF 100%);
+    overflow: hidden;
+}
+
+.image-section {
+    flex: 1;
+    background-image: url('/img/unsplash_slWBjTGhREQ.png'); /* Замените ссылку на изображение */
+    background-size: cover;
+    background-position: center;
+}
+
+.form-section {
+    flex: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 16px;
+}
+
+.logo img {
+    width: 132px;
+    height: 132px;
+}
+
+.input-group {
+    position: relative;
+    width: 346px;
+    margin-bottom: 22px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 43px;
+    padding: 10px 14px 10px 36px;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+    background: radial-gradient(circle, #FFFFFF 0%, #F3F1F1 100%);
+}
+
+.input-group input:focus {
+    border-color: #6c63ff;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #2E2D69;
+    font-size: 16px;
+}
+
+.btn {
+    width: 346px;
+    height: 51px;
+    margin-top: 26px;
+    background: linear-gradient(90deg, #4C4AB9 1%, #2E2D69 100%);
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #2E2D69, #4C4AB9);
+}
+
+.text {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.text a {
+    color: #4C4AB9;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.text a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #4C4AB9;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.text a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.text a:hover {
+    color: #2E2D69;
+}

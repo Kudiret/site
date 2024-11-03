@@ -1,0 +1,184 @@
+/* Основные стили для страницы события */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: white;
+    background-color: #2E2D69; /* Цвет фона для страницы события */
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 65px;
+    background-color: white;
+}
+
+.logo h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #2E2D69;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.logo .link-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+/* Навигационное меню */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu .nav-button {
+    position: relative;
+    width: 100px;
+    height: 25px;
+    color: #2E2D69;
+    font-family: 'Inter',;
+    font-weight: 535;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+    margin-top: 15px;
+}
+
+.nav-menu .nav-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 1.5px;
+    background: #2E2D69;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu .nav-button:hover {
+    color: #4C4AB9;
+}
+
+.nav-menu .nav-button:hover::after,
+.nav-menu .nav-button.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Логотип в хедере */
+.header-logo img {
+    width: 60px;
+}
+
+/* Основной блок для страницы события */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0; /* Верхний и нижний отступы */
+    min-height: calc(100vh - 145px); /* Высота main с учетом header и footer */
+}
+
+.event-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Контент события */
+.event-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 1200px;
+    height: 470px;
+    margin-top: 10px; /* Расстояние от header */
+    margin-bottom: 10px; /* Расстояние до footer */
+    color: #2E2D69;
+}
+
+.event-image {
+    width: 220px;
+    height: auto;
+    margin-left: 40px; /* Смещение изображения правее */
+}
+
+.event-description {
+    margin-left: 27px;
+    margin-bottom: 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.event-description p {
+    font-family: 'Inter', ;
+    font-size: 16px;
+    color: #2E2D69;
+    line-height: 1.5;
+    font-size: larger;
+    font-weight: 550;
+}
+
+.event-description strong {
+    font-weight: 700;
+    color: #2E2D69;
+}
+
+
+/* Кнопка "Join" */
+.join-button {
+    position: absolute;
+    width: 100px;
+    padding: 12px 90px;
+    background-color: #2E2D69;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-weight: 550;
+    font-size: large;
+    text-align: center;
+    text-decoration: none;
+    /* transition: background 0.3s; */
+    cursor: pointer;
+    left: 600px ;
+    top: 400px;
+
+    display: flex;           /* Flexbox для центрирования */
+    align-items: center;     /* Центрирование по вертикали */
+    justify-content: center; 
+
+}
+
+.join-button:hover {
+    background: linear-gradient(90deg, #2E2D69, #4C4AB9);
+}
+
+/* Footer */
+footer {
+    height: 80px;
+    background-color: white;
+}
