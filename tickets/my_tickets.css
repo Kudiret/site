@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Установили Montserrat в качестве основного шрифта */
+}
+
+body {
+    color: white;
+    background-color: #2E2D69;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    height: 65px;
+    background-color: white;
+}
+
+.logo h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #2E2D69;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.logo .link-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 100px; /* Расстояние между элементами навигации */
+}
+
+.nav-menu .nav-button {
+    position: relative;
+    width: 100px; /* Указанный размер ширины */
+    height: 25px;  /* Указанный размер высоты */
+    color: #2E2D69;
+    font-family: 'Inter',;
+    font-weight: 535; /* Inter Medium */
+    font-size: 20px; /* Указанный размер шрифта */
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+    margin-top: 15px;
+}
+
+.nav-menu .nav-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px; /* Подчеркивание чуть ниже текста */
+    width: 100%;
+    height: 2px;
+    background: #2E2D69;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu .nav-button:hover {
+    color: #4C4AB9; /* Цвет при наведении */
+}
+
+.nav-menu .nav-button:hover::after,
+.nav-menu .nav-button.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.header-logo img {
+    width: 60px;
+}
+
+/* Основной блок для My Tickets */
+.my-tickets-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #2E2D69;
+}
+
+/* Контейнер для карточек билетов */
+.my-tickets-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 1400px;
+    height: 470px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.my-tickets-container h2 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Стили для вкладок (Active tickets и History) */
+.tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    font-size: 18px;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: #FFC107;
+}
+
+/* Стили для активных билетов */
+.ticket-card {
+    display: flex;
+    align-items: center;
+    background-color: #F3F3F3;
+    border-radius: 8px;
+    padding: 20px;
+    gap: 30px;
+    width: 800px;
+    height: 180px;
+    margin-top: 40px;
+}
+
+.ticket-image {
+    margin-left: -20px;   
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.ticket-details {
+    display: flex;
+    margin-left: 170px;
+    margin-top: -10px;
+    flex-direction: column;
+    gap: 8px; /* Увеличенный отступ между строками */
+    text-align: left;
+}
+
+.ticket-details h3 {
+    font-size: 25px;
+    font-weight: 600; /* Полужирный стиль для заголовка */
+    color: black;
+    margin-bottom: -15px;
+}
+
+.ticket-details  {
+    font-size: 16px;
+    color: black;
+    line-height: 1.5; /* Увеличенная высота строки для лучшего расстояния */
+}
+.third{
+    font-size: small;
+    margin-bottom: -5px;
+    margin-right: 10px;
+}
+
+.second{
+    margin-bottom: 15px;
+    font-size: small;
+}
+.ticket-status {
+    font-weight: 6500;
+    color: #4CAF50;
+    font-size: 15px;
+    margin-top: 20px; /* Отступ сверху для разделения от основного текста */
+}
+
+/* Кнопка "To Drop" */
+.drop-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    padding: 8px 30px;
+    right: 650px;
+    top: 400px;
+    background-color: #FFC107;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Секция History */
+.history-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+/* Стили для карточек билетов в разделе История */
+.history-ticket-card {
+    width: 380px; /* Меньшая ширина для билетов в истории */
+    height: 180px;
+    display: flex;
+    align-items: center;
+    background-color: #F3F3F3;
+    border-radius: 8px;
+    padding: 15px;
+    gap: 15px;
+    margin: 5px; /* Расстояние между карточками в истории */
+}
+
+.history-ticket-image {
+    width: 130px; /* Меньший размер изображения для билетов в истории */
+    height: 160px;
+    border-radius: 8px;
+}
+
+.history-first{
+    position: absolute;
+    top: 270px;
+}
+.history-second{
+    position: absolute;
+    top: 290px;
+    color: black;
+}
+
+.history-ticket-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.history-ticket-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin: 0;
+}
+
+.history-ticket-details  {
+    font-size: 14px;
+    color: #6D6D6D;
+    margin: 0;
+    margin-top: 30px;
+}
+
+
+/* Скрытие и показ секций Active tickets и History */
+.active-tickets-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.history-section.hidden, .active-tickets-section.hidden {
+    display: none;
+}
+
+/* Стили для пустого состояния, когда нет активных билетов */
+.no-tickets-message.hidden {
+    display: none; /* По умолчанию скрыто */
+}
+
+.no-tickets-message.visible {
+    display: flex; /* Отображать, когда нет активных билетов */
+}
+
+/* текста "There's nothing here yet...", */
+.no-tickets-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    margin-top: 60px;
+}
+
+.no-tickets-message h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.no-tickets-message p {
+    font-size: 16px;
+    color: #6D6D6D;
+    margin-bottom: 20px;
+}
+
+.ticket-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket-icon {
+    width: 10x;
+    height: 150px;
+    border-radius: 8px;
+}
+
+/* Кнопка добавления события */
+.add-event-button {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: #FFC107;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.add-event-button i {
+    font-size: 12px;
+    color: black;
+}
+
+/* Footer */
+footer {
+    height: 80px;
+    background-color: white;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets - SDU Connect</title>
+    <link rel="stylesheet" href="my_tickets.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>SDU C<img src="/img/Vector.png" alt="Link Icon" class="link-icon">NNECT</h1>
+    </div>
+    <nav class="nav-menu">
+        <a href="/Main/main.html" class="nav-button">Events</a>
+        <a href="my_tickets.html" class="nav-button active">My tickets</a>
+        <a href="/clubs/clubs.html" class="nav-button">Clubs</a>
+    </nav>
+    <div class="header-logo">
+        <img src="/img/image 2.png" alt="SDU Logo">
+    </div>
+</header>
+
+<main class="my-tickets-main">
+    <div class="my-tickets-container">
+        <h2>My Tickets</h2>
+        <div class="tabs">
+            <button class="tab active" onclick="showActiveTickets()">Active tickets</button>
+            <button class="tab" onclick="showHistory()">History</button>
+        </div>
+
+        <!-- Секция для активных билетов -->
+        <div class="active-tickets-section" id="activeTicketsSection">
+            <div class="ticket-card" id="ticketCard">
+                <img src="/img/welcome_party.png" alt="Welcome Party Poster" class="ticket-image">
+                <div class="ticket-details">
+                    <h3 class="first">Welcome Party</h3>
+                    <p class="second">[By SDUlife & Event club]</p>
+                    <p class="third"><i class="fas fa-map-marker-alt"></i> SduLife scene</p>
+                    <p class="third"><i class="fas fa-calendar-alt"></i> 11.10.2024 · 19:00</p>
+                    <p class="ticket-status">FOR FREE</p>
+                    <button class="drop-button" onclick="dropTicket()">To Drop</button>
+                </div>
+            </div>
+
+            <!-- Сообщение о пустом списке -->
+            <div class="no-tickets-message" id="noTicketsMessage" style="display: none;">
+                <h3>There's nothing here yet...</h3>
+                <p>This section will display active tickets</p>
+                <div class="ticket-icon-container">
+                    <img src="/img/ticket_icon.png" alt="Ticket Icon" class="ticket-icon">
+                    <button class="add-event-button" onclick="goToEvents()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция для истории билетов -->
+        <div class="history-section" id="historySection" style="display: none;">
+            <!-- Исторические билеты -->
+            <div class="history-ticket-card">
+                <img src="/img/azil_alemi.png" alt="AZIL Alemi Poster" class="history-ticket-image">
+                <div class="history-ticket-details">
+                    <h3 class="history-first">AZIL Alemi</h3>
+                    <p class="history-second">[By SDUlife & Event club]</p>
+                    <p class="history-third">SDU, RED HALL</p>
+                    <p class="history-third">03.04.2024 · 19:00</p>
+                </div>
+            </div>
+            <div class="history-ticket-card">
+                <img src="/img/we_talk.png" alt="WE TALK Poster" class="history-ticket-image">
+                <div class="history-ticket-details">
+                    <h3 class="history-first">WE TALK</h3>
+                    <p class="history-second">[WE With Azamat Skakov<br> &  Rasul Abdulalov]</p>
+                    <p class="history-third">SDU, RED HALL</p>
+                    <p class="history-third">22.05.2024 · 18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer></footer>
+
+<script>
+    function showActiveTickets() {
+        document.getElementById("activeTicketsSection").style.display = "block";
+        document.getElementById("historySection").style.display = "none";
+        document.querySelector(".tab.active").classList.remove("active");
+        document.querySelectorAll(".tab")[0].classList.add("active");
+    }
+
+    function showHistory() {
+        document.getElementById("activeTicketsSection").style.display = "none";
+        document.getElementById("historySection").style.display = "flex";
+        document.querySelector(".tab.active").classList.remove("active");
+        document.querySelectorAll(".tab")[1].classList.add("active");
+    }
+
+    function dropTicket() {
+        localStorage.setItem("ticketDropped", "true");
+        document.getElementById("ticketCard").style.display = "none";
+        document.getElementById("noTicketsMessage").style.display = "flex";
+    }
+
+    function goToEvents() {
+        window.location.href = "/Main/main.html";
+    }
+</script>
+
+</body>
+</html>

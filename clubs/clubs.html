@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs - SDU Connect</title>
+    <link rel="stylesheet" href="clubs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>SDU C<img src="/img/Vector.png" alt="Link Icon" class="link-icon">NNECT</h1>
+    </div>
+    <nav class="nav-menu">
+        <a href="/Main/main.html" class="nav-button">Events</a>
+        <a href="/tickets/my_tickets.html" class="nav-button">My tickets</a>
+        <a href="clubs.html" class="nav-button active">Clubs</a>
+    </nav>
+    <div class="header-logo">
+        <img src="/img/image 2.png" alt="SDU Logo">
+    </div>
+</header>
+
+<main class="clubs-main">
+    <div class="sidebar">
+        <button class="club-item sdulife" onclick="navigateTo('clubs.html')">
+            <img src="/img/image (3).png" alt="SDULife" class="icon">
+            <span>SDULife</span>
+        </button>
+        <button class="club-item vision" onclick="navigateTo('vision.html')">
+            <img src="/img/image (4).png" alt="Vision" class="icon">
+            <span>Vision</span>
+        </button>
+        <button class="club-item art-club" onclick="navigateTo('art_club.html')">
+            <img src="/img/image (5).png" alt="Art Club" class="icon">
+            <span>art club</span>
+        </button>
+        <button class="club-item orlean" onclick="navigateTo('orlean.html')">
+            <img src="/img/image (8).png" alt="Orlean" class="icon">
+            <span>orlean</span>
+        </button>
+        <button class="club-item music-club" onclick="navigateTo('music_club.html')">
+            <img src="/img/image (9).png" alt="Music Club" class="icon">
+            <span>Music Club</span>
+        </button>
+        <button class="club-item dombyra-club" onclick="navigateTo('dombyra_club.html')">
+            <img src="/img/image (6).png" alt="Dombra Club" class="icon">
+            <span>DOMBYRA club</span>
+        </button>
+        <button class="club-item puzzle-club" onclick="navigateTo('puzzle_club.html')">
+            <img src="/img/image (7).png" alt="Puzzle Club" class="icon">
+            <span>PUZZLE CLUB</span>
+        </button>
+    </div>
+    
+    </div>
+    
+    
+
+    <div class="club-details sdulife-details">
+        <!-- Контент SDULife -->
+        <div class="club-header">
+            <img src="/img/image (3).png"" alt="SDULife Logo" class="club-logo">
+            <div class="club-title">SDULife</div>
+        </div>
+        <p class="club-description">
+            SDULife is a dynamic blend of academic, social, and extracurricular activities that foster student growth and community engagement.
+            With diverse student clubs, cultural events, workshops, and sports, SDULife provides opportunities for personal development, 
+            leadership, and creativity. It encourages students to explore their passions, engage in charitable work, and develop skills
+            for their future careers, creating a vibrant and supportive campus environment.
+        </p>
+        <div class="club-events">
+            <img src="/img/sdu_awards.png" alt="SDU Awards">
+            <img src="/img/sdu_fest.png" alt="SDU Fest">
+            <img src="/img/welcome_party.png" alt="Welcome Party">
+            <img src="/img/azil_alemi.png" alt="AZIL Alemi">
+        </div>
+        <div class="club-social">
+            <a href="https://instagram.com/sdulife" target="_blank">
+                <i class="fab fa-instagram"></i> @sdulife
+            </a>
+        </div>
+    </div>
+</main>
+<script>
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+</script>
+
+<footer></footer>
+
+</body>
+</html>

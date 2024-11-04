@@ -15,8 +15,8 @@
         <h1>SDU C<img src="/img/Vector.png" alt="Link Icon" class="link-icon">NNECT</h1>
     </div>
     <nav class="nav-menu">
-        <a href="#" class="nav-button active">Events</a>
-        <a href="#" class="nav-button">My tickets</a>
+        <a href="/Main/main.html" class="nav-button active">Events</a>
+        <a href="/tickets/my_tickets.html" class="nav-button">My tickets</a>
         <a href="#" class="nav-button">Clubs</a>
     </nav>
     <div class="header-logo">
@@ -41,10 +41,45 @@
                 ⏰ at 18:00<br>
                 📍 RED HALL
             </p>
-                <button class="join-button">Join</button>
+            <button class="join-button" id="joinButton" onclick="toggleJoin()">Join</button>
         </div>
     </div>
 </main>
+
+<!-- Добавляем JavaScript -->
+<script>
+    // Установка начального состояния кнопки при загрузке страницы
+    document.addEventListener("DOMContentLoaded", () => {
+        const isJoined = localStorage.getItem("isJoined") === "true";
+        const joinButton = document.getElementById("joinButton");
+
+        if (isJoined) {
+            joinButton.innerText = "Joined";
+            joinButton.style.backgroundColor = "#219921"; // Зелёный цвет для состояния "Joined"
+        } else {
+            joinButton.innerText = "Join";
+            joinButton.style.backgroundColor = "#2E2D69"; // Исходный цвет для состояния "Join"
+        }
+    });
+
+    // Функция для переключения состояния кнопки "Join"
+    function toggleJoin() {
+        const joinButton = document.getElementById("joinButton");
+        const isJoining = joinButton.innerText === "Join";
+
+        if (isJoining) {
+            localStorage.setItem("isJoined", "true");
+            localStorage.setItem("ticketDropped", "false"); // Показываем билет на странице my_tickets.html
+            joinButton.innerText = "Joined";
+            joinButton.style.backgroundColor = "#219921"; // Меняем цвет на зелёный
+        } else {
+            localStorage.setItem("isJoined", "false");
+            localStorage.setItem("ticketDropped", "true"); // Скрываем билет на странице my_tickets.html
+            joinButton.innerText = "Join";
+            joinButton.style.backgroundColor = "#2E2D69"; // Возвращаем исходный цвет
+        }
+    }
+</script>
 
 <footer></footer>
 
